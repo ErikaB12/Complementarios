@@ -1,0 +1,12 @@
+﻿@model IEnumerable<GuiaEpisodiosSimpson.Models.Episodio>
+@{ Layout = "Layout";}
+
+@foreach (var episodio in Model)
+{
+    <div class="card2">
+        <input type="hidden" value="@episodio.IdTemporada"/>
+        <h1 class="tittle">@episodio.Titulo</h1>
+        <span class="totalchapters">@episodio.IdTemporadaNavigation.Temporada</span>
+        <p class="description">@episodio.Descripcion</p>
+    </div>
+}

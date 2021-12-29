@@ -1,0 +1,16 @@
+﻿@model IEnumerable<GuiaEpisodiosSimpson.Models.Temporadum>
+@{ Layout = "Layout";}
+
+@foreach (var t in Model)
+{
+    <div class="card">
+        <h1 class="tittle">@t.Temporada</h1>        
+        <span class="totalchapters">Fecha de estreno: @t.FechaEstreno.</span>
+        <p class="description">Toda la información relevante acerca de los episodios de la temporada.</p>
+        <a href="~/Info-Temporada-@t.Id">
+            <input class="btnInfo" type="button" value="Ver Info">
+        </a>
+    </div>
+}
+
+
