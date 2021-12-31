@@ -1,0 +1,39 @@
+﻿@model Petalos.Models.ViewModels.RecomendacionesViewModel
+@{
+    Layout = "_Layout";
+}
+
+<section class="post">
+    <h2>@Model.Datosflores.Nombre</h2>
+
+    <h4>Nombre científico o latino:</h4>
+    <p>@Model.Datosflores.Nombrecientifico</p>
+    <h4>Nombre común:</h4>
+    <p>@Model.Datosflores.Nombrecomun</p>
+    <h4>Origen:</h4>
+    <p>@Model.Datosflores.Origen</p>
+    <h4>Descripción:</h4>
+    <p>
+        @Model.Datosflores.Descripcion
+    </p>
+
+    <div id="imagenes">
+        @foreach (var imagen in Model.Datosflores.Imagenesflores)
+        {
+            <img title="@Model.Datosflores.Nombre" src="~/images/@imagen.Nombreimagen">
+        }
+    </div>
+</section>
+<aside>
+    <nav>
+        <h2>Menú</h2>
+        <ul>
+            @foreach (var recomendacion in Model.Recomendacion)
+            {
+                <li><a href='~/Datos-de-la-Flor/@recomendacion.Nombre'>@recomendacion.Nombre</a></li>
+            }
+        </ul>
+    </nav>
+</aside>
+
+
